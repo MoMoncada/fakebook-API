@@ -1,5 +1,7 @@
+//--- Importing modules ---//
 const { Schema, model, Types } = require('mongoose');
 
+//--- Schema for Users ---//
 const userSchema = new Schema(
     {
         username: {
@@ -41,12 +43,13 @@ const userSchema = new Schema(
     }
 );
 
-
+//--- Calculating the number of friends a user has ---//
 userSchema.virtual('friendCount').get(function(){
     return this.friends.length;
 });
 
-const User = model('User, userSchema');
 
+
+const User = model('User, userSchema');
 
 module.exports = User;
