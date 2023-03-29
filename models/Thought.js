@@ -3,7 +3,6 @@ const { Schema, model, Types } = require('mongoose');
 const { DateTime } = require('luxon');
 
 
-
 //--- Schema for Thoughts ---//
 const thoughtSchema = new Schema(
     {
@@ -74,10 +73,6 @@ const reactionSchema = new Schema (
         id: false //-- prevents virtuals from creating duplicates of _id as 'id'--//
     }
 );
-
-
-
-
 
 
 //--- Calculating the number of reactions a user has ---//
